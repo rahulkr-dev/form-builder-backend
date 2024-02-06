@@ -1,18 +1,17 @@
 import app from "./app";
 import { Config } from "./config";
+import connectDB from "./config/db";
 import logger from "./config/logger";
 
-const startServer = () => {
+const startServer = async () => {
   try {
-    // throw new Error("Something went wrong")
+    await connectDB();
     const PORT = Config.PORT;
     app.listen(PORT, () => {
-      // eslint-disable-next-line no-console
       logger.info(`listening on port ${PORT}`); // can pass additional parameter as well
       logger.debug("I am deburg");
     });
   } catch (err) {
-    // eslint-disable-next-line no-console
     if (err instanceof Error) {
       logger.error(err);
       setTimeout(() => {
@@ -22,4 +21,4 @@ const startServer = () => {
   }
 };
 
-startServer();
+void startServer();

@@ -1,7 +1,7 @@
 {
-  "name": "auth-service",
+  "name": "form-builder-backend",
   "version": "1.0.0",
-  "description": "A user management system",
+  "description": "dynmically can build form",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server.ts",
@@ -45,6 +45,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "http-errors": "^2.0.0",
+    "mongoose": "^8.1.1",
     "winston": "^3.11.0"
   }
 }
